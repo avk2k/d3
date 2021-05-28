@@ -1,6 +1,12 @@
-<!-- <object id="svgobject" type="image/svg+xml" data="./../assets/shema.svg">
-</object> -->
-<div id="sensorGraph"></div>
-
-
+<input if="cbColor" type="checkbox" [checked]="this.colorizeGraph" (change)="this.colorizeGraphChange($event)">
+<label for="cbColor">Раскрасить график</label>
+<input if="cbLimits" type="checkbox" [checked]="this.showLimits" (change)="this.showLimitsChange($event)">
+<label for="cbLimits">Линии лимитов</label>
+<app-monitoring-graph 
+    [showLimits]="this.showLimits"
+    [limits]="this.limits"
+    [colorizeByLimits]="this.colorizeGraph"
+    [graphData]="this.graphData"
+    yUnits="мг/м3"
+></app-monitoring-graph>
 <router-outlet></router-outlet>
